@@ -1,7 +1,13 @@
 import { ServiceItem, Testimonial, FAQItem, BeforeAfterItem } from '../types';
-import torchImg from '../assets/images/torch_on_waterproofing_1788168677618.jpg';
-import gutterImg from '../assets/images/modern_roof_gutters_1788168695699.jpg';
-import heroImg from '../assets/images/roof_waterproofing_hero_1788168654335.jpg';
+import saGuttersImg from '../assets/images/sa_gutters_house_1788188245947.jpg';
+import saRoofSheetsImg from '../assets/images/sa_roof_sheets_1788188261181.jpg';
+import saRoofRepairsImg from '../assets/images/sa_roof_repairs_1788188276892.jpg';
+import saCeilingImg from '../assets/images/sa_ceiling_repair_1788188290829.jpg';
+import saPlasterSkimImg from '../assets/images/sa_plaster_skim_1788188307266.jpg';
+import saTeamPaintingImg from '../assets/images/sa_team_painting_1788188322200.jpg';
+import saTreeFellingImg from '../assets/images/sa_tree_felling_1788188338987.jpg';
+import saTorchonImg from '../assets/images/sa_torchon_waterproof_1788188355160.jpg';
+import saLiquidRubberImg from '../assets/images/sa_liquid_rubber_1788188372243.jpg';
 
 export const COMPANY_PHONE = '064 038 9839';
 export const COMPANY_PHONE_RAW = '0640389839';
@@ -17,7 +23,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     fullDesc: 'Expert waterproofing for flat concrete roofs, balconies, and deck slabs using premium high-tensile 4mm torch-on polyester-reinforced bitumen membranes. We treat concrete cracks, apply deep-penetrating primers, and ensure optimal drainage slopes.',
     category: 'waterproofing',
     popular: true,
-    image: torchImg,
+    image: saTorchonImg,
     features: [
       'Heavy-duty 4mm SABS torch-on membrane',
       'Bitumen primer & expansion joint sealing',
@@ -29,11 +35,11 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: 'roof-sheets',
     title: 'Roof Sheets Waterproofing',
-    shortDesc: 'Complete weatherproofing for IBR, Corrugated & Klip-Lok metal sheeting.',
+    shortDesc: 'Complete weatherproofing for IBR, Corrugated & Klip-Lok metal sheeting in SA climate.',
     fullDesc: 'Specialized sealing for residential and industrial metal roofs. We seal overlapping sheet joints with reinforced membrane systems, replace rusted roofing screws with bonded EPDM washers, and apply rust converter and anti-corrosion barrier coatings.',
     category: 'roofing',
     popular: true,
-    image: heroImg,
+    image: saRoofSheetsImg,
     features: [
       'Lap joint & ridge cap membrane sealing',
       'Roof screw replacement with sealed washers',
@@ -45,11 +51,11 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: 'chromadek-gutters',
     title: 'Chromadek & Galvanized Gutters',
-    shortDesc: 'Seamless modern gutters, box gutters, downpipes & custom rainwater systems.',
+    shortDesc: 'Seamless modern gutters, box gutters, downpipes & custom rainwater systems for SA homes.',
     fullDesc: 'Custom roll-formed seamless Chromadek and heavy-duty galvanized steel gutter installations and repairs. Designed to resist corrosion, prevent overflow damage to your foundation, and withstand harsh weather seasons.',
     category: 'gutters',
     popular: true,
-    image: gutterImg,
+    image: saGuttersImg,
     features: [
       'Continuous seamless Chromadek gutters',
       'Galvanized & PVC downpipe installations',
@@ -65,6 +71,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     fullDesc: 'Comprehensive residential and commercial roofing solutions. From fixing persistent roof leaks, replacing cracked roof tiles, re-bedding ridge caps with bonding mortar, to installing complete new timber or steel roof structures.',
     category: 'roofing',
     popular: true,
+    image: saRoofRepairsImg,
     features: [
       'Emergency roof leak diagnostics & repairs',
       'Broken & shifted tile replacement',
@@ -79,6 +86,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     shortDesc: 'Rhino board, PVC ceilings, knotty pine & water damage repairs.',
     fullDesc: 'Professional ceiling design, brand-new installations, and emergency restoration. We replace sagging, moldy, or collapsed water-damaged ceiling boards with modern plasterboard or moisture-resistant PVC ceilings with designer cornices.',
     category: 'site-services',
+    image: saCeilingImg,
     features: [
       'Rhino board ceiling & skimmed finishes',
       'Low-maintenance waterproof PVC ceilings',
@@ -93,6 +101,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     shortDesc: 'Ultra-smooth rhinolite skimming, exterior plastering & crack bridging.',
     fullDesc: 'High-precision interior skimming and exterior plastering. Transform rough, uneven brickwork or dated walls into silky-smooth modern surfaces ready for painting, plus heavy-duty exterior weather-proof plastering.',
     category: 'painting-plastering',
+    image: saPlasterSkimImg,
     features: [
       'Interior Rhinolite skimming to mirror finish',
       'Exterior sand-cement plastering & patching',
@@ -104,10 +113,10 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: 'walls-painting',
     title: 'Interior & Exterior Painting',
-    shortDesc: 'Weather-resistant exterior coatings, roof painting & interior finishes.',
+    shortDesc: 'Full professional painting teams for exterior walls, roofs & interior finishes.',
     fullDesc: 'Premium residential and commercial painting using top-tier acrylics, waterproof elastomeric wall coatings, and UV-resistant roof paints. Includes deep pressure washing, sugar soap preparation, undercoats, and two durable finish coats.',
     category: 'painting-plastering',
-    image: gutterImg,
+    image: saTeamPaintingImg,
     features: [
       'High-durability weather-guard exterior paint',
       'Smooth, washable interior wall finishes',
@@ -122,6 +131,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     shortDesc: 'Safe branch trimming over roofs, tree removals & fast site rubble clearing.',
     fullDesc: 'Protect your roof structure from dangerous overhanging branches, falling leaves clogging gutters, and aggressive root systems. We provide safe tree felling, branch lopping, de-stumping, and fast site clearing with prompt rubble disposal.',
     category: 'site-services',
+    image: saTreeFellingImg,
     features: [
       'Safe removal of dangerous overhanging branches',
       'Complete tree felling and stump grinding',
@@ -136,7 +146,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     shortDesc: 'Specialized 4mm thermofused bitumen membrane for flat roofs, parapets & balconies.',
     fullDesc: 'The gold standard for concrete roofs and commercial buildings. Applied by certified flame-torch operators for a seamless, 100% impenetrable seal.',
     category: 'waterproofing',
-    image: torchImg,
+    image: saTorchonImg,
     features: [
       'Thermofused modified bitumen membrane',
       'Full surface adhesion with no air pockets',
@@ -150,6 +160,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     shortDesc: 'Seamless, highly flexible elastomeric membrane for complex roof contours.',
     fullDesc: 'Advanced cold-applied liquid rubber coating that cures into a continuous rubberized membrane with up to 900% elongation, resisting UV degradation, acid rain, and substrate shifts.',
     category: 'waterproofing',
+    image: saLiquidRubberImg,
     features: [
       'Continuous joint-free elastomeric skin',
       'Exceptional UV resistance & thermal flexibility',

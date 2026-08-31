@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { BEFORE_AFTER_CASES } from '../data/servicesData';
 import { ShieldCheck, CheckCircle2, ArrowRight } from 'lucide-react';
-import torchImg from '../assets/images/torch_on_waterproofing_1788168677618.jpg';
-import gutterImg from '../assets/images/modern_roof_gutters_1788168695699.jpg';
+import saTorchonImg from '../assets/images/sa_torchon_waterproof_1788188355160.jpg';
+import saGuttersImg from '../assets/images/sa_gutters_house_1788188245947.jpg';
+import saRoofSheetsImg from '../assets/images/sa_roof_sheets_1788188261181.jpg';
+import saRoofRepairsImg from '../assets/images/sa_roof_repairs_1788188276892.jpg';
 
 interface BeforeAfterShowcaseProps {
   onOpenQuote: (serviceName?: string) => void;
@@ -18,17 +20,26 @@ export const BeforeAfterShowcase: React.FC<BeforeAfterShowcaseProps> = ({ onOpen
       problem: 'Severe ponding water, hairline expansion cracks, and leaking ceiling underneath during heavy downpours.',
       solution: 'Stripped failing old seal, leveled ponding zones with screed, applied bitumen primer and dual-layer 4mm thermofused torch-on membrane with UV reflective silver coating.',
       result: '100% leak-free, protected against severe summer hailstorms with a 10-year warranty.',
-      image: torchImg,
+      image: saTorchonImg,
       badge: '10-Year Warranty',
     },
     {
       title: 'Seamless Chromadek Gutters & Exterior Restoration',
-      category: 'Gutters & Painting',
-      problem: 'Rusted steel gutters overflowing onto foundations, peeling parapet paint, and broken fascia boards.',
-      solution: 'Fitted custom charcoal seamless Chromadek roll-formed gutters, installed large capacity downpipes, patched parapet cracks, and applied 2 coats of weather-guard exterior paint.',
+      category: 'Gutters & Drainage',
+      problem: 'Rusted steel gutters overflowing onto foundations, peeling parapet paint, and broken fascia boards on South African home.',
+      solution: 'Fitted custom charcoal seamless Chromadek roll-formed gutters, installed large capacity downpipes, patched parapet cracks, and protected the property foundation.',
       result: 'Optimal rainwater flow away from building, stunning modern exterior transformation.',
-      image: gutterImg,
+      image: saGuttersImg,
       badge: 'Modern Charcoal Finish',
+    },
+    {
+      title: 'Corrugated & IBR Roof Sheets Waterproofing',
+      category: 'Roof Sheets Sealing',
+      problem: 'Persistent lap joint water ingress and rusted roof screws causing ceiling damage across metal roof.',
+      solution: 'Neutralized rust, replaced screws with vulcanized EPDM washers, and sealed all lap joints with polyester membrane and weather-barrier coating.',
+      result: 'Weatherproofed against wind-driven highveld rain and severe thermal expansion.',
+      image: saRoofSheetsImg,
+      badge: 'Weather-Shield Certified',
     },
   ];
 
