@@ -1,0 +1,6 @@
+{
+  "name": "Interseal Waterproofing Services",
+  "description": "Professional Roofing & Waterproofing Experts - Concrete roofs, roof sheets, gutters, plastering, painting and rubble removal.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
