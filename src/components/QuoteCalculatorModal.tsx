@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { X, MessageCircle, Send, CheckCircle2, ShieldAlert, Sparkles, Phone, Calculator } from 'lucide-react';
+import { X, MessageCircle, Send, CheckCircle2, ShieldAlert, Sparkles, Phone, Calculator, ShieldCheck } from 'lucide-react';
 import { SERVICES_DATA, COMPANY_PHONE, WHATSAPP_INTL } from '../data/servicesData';
-import { QuoteRequest } from '../types';
+import { QuoteRequest, LegalTabKey } from '../types';
 
 interface QuoteCalculatorModalProps {
   isOpen: boolean;
   onClose: () => void;
   preSelectedService?: string;
+  onOpenLegal?: (tab: LegalTabKey) => void;
 }
 
 export const QuoteCalculatorModal: React.FC<QuoteCalculatorModalProps> = ({
   isOpen,
   onClose,
   preSelectedService,
+  onOpenLegal,
 }) => {
   const [formData, setFormData] = useState<QuoteRequest>({
     fullName: '',
@@ -289,6 +291,32 @@ export const QuoteCalculatorModal: React.FC<QuoteCalculatorModalProps> = ({
                   <Send className="w-4 h-4 text-amber-400" />
                   <span>Submit Free Quote Request</span>
                 </button>
+              </div>
+
+              {/* POPIA & Privacy Consent Disclaimer */}
+              <div className="pt-1 text-center">
+                <p className="text-[10px] text-slate-500 leading-normal flex items-center justify-center gap-1.5">
+                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0 inline" />
+                  <span>
+                    Your details are protected under the South African{' '}
+                    <button
+                      type="button"
+                      onClick={() => onOpenLegal && onOpenLegal('popi')}
+                      className="text-[#0084D6] hover:underline font-bold inline"
+                    >
+                      POPI Act (POPIA)
+                    </button>{' '}
+                    and{' '}
+                    <button
+                      type="button"
+                      onClick={() => onOpenLegal && onOpenLegal('privacy')}
+                      className="text-[#0084D6] hover:underline font-bold inline"
+                    >
+                      Privacy Policy
+                    </button>
+                    . Zero spam.
+                  </span>
+                </p>
               </div>
 
               <p className="text-[11px] text-center text-slate-500 font-medium">

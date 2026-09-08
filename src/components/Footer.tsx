@@ -1,13 +1,20 @@
 import React from 'react';
 import { Logo } from './Logo';
-import { Phone, MessageCircle, MapPin, ShieldCheck, Heart, ArrowUp } from 'lucide-react';
+import { Phone, MessageCircle, MapPin, ShieldCheck, ArrowUp, Lock, Scale, Cookie, FileText } from 'lucide-react';
 import { COMPANY_PHONE, COMPANY_PHONE_RAW, WHATSAPP_INTL, COMPANY_AREAS, SERVICES_DATA } from '../data/servicesData';
+import { LegalTabKey } from '../types';
 
 interface FooterProps {
   onOpenQuote: (serviceName?: string) => void;
+  onOpenLegal?: (tab: LegalTabKey) => void;
+  onOpenCookiePreferences?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenQuote }) => {
+export const Footer: React.FC<FooterProps> = ({
+  onOpenQuote,
+  onOpenLegal,
+  onOpenCookiePreferences,
+}) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -27,6 +34,14 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuote }) => {
             <div className="flex items-center gap-2 text-amber-400 font-bold text-xs pt-1">
               <ShieldCheck className="w-4 h-4" />
               <span>Protect Your Roof. Protect Your Home.</span>
+            </div>
+
+            {/* POPIA / Regulatory Badge */}
+            <div className="pt-2">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-[11px] text-slate-300">
+                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                <span>POPIA &amp; PAIA Compliant &bull; South Africa</span>
+              </div>
             </div>
           </div>
 
@@ -89,14 +104,73 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuote }) => {
           </div>
         </div>
 
+        {/* Legal & Regulatory Nav Row */}
+        <div className="mt-10 pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+            <span className="text-white font-bold text-xs uppercase tracking-wider">
+              Legal &amp; Policies:
+            </span>
+
+            <button
+              id="footer-privacy-policy-btn"
+              onClick={() => onOpenLegal && onOpenLegal('privacy')}
+              className="text-slate-400 hover:text-sky-300 transition-colors flex items-center gap-1.5 cursor-pointer"
+            >
+              <Lock className="w-3.5 h-3.5 text-sky-400" />
+              <span>Privacy Statement</span>
+            </button>
+
+            <button
+              id="footer-popi-policy-btn"
+              onClick={() => onOpenLegal && onOpenLegal('popi')}
+              className="text-slate-400 hover:text-amber-300 transition-colors flex items-center gap-1.5 cursor-pointer font-medium"
+            >
+              <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
+              <span>POPI Act Policy (POPIA)</span>
+            </button>
+
+            <button
+              id="footer-paia-policy-btn"
+              onClick={() => onOpenLegal && onOpenLegal('paia')}
+              className="text-slate-400 hover:text-sky-300 transition-colors flex items-center gap-1.5 cursor-pointer"
+            >
+              <Scale className="w-3.5 h-3.5 text-sky-400" />
+              <span>PAIA Manual (Section 51)</span>
+            </button>
+
+            <button
+              id="footer-cookie-policy-btn"
+              onClick={() => onOpenLegal && onOpenLegal('cookies')}
+              className="text-slate-400 hover:text-amber-300 transition-colors flex items-center gap-1.5 cursor-pointer"
+            >
+              <Cookie className="w-3.5 h-3.5 text-amber-400" />
+              <span>Cookie Policy</span>
+            </button>
+
+            {onOpenCookiePreferences && (
+              <button
+                id="footer-cookie-settings-btn"
+                onClick={onOpenCookiePreferences}
+                className="text-slate-500 hover:text-white transition-colors underline cursor-pointer text-[11px]"
+              >
+                Cookie Preferences
+              </button>
+            )}
+          </div>
+
+          <div className="text-[11px] text-slate-500">
+            Regulated under South African Law
+          </div>
+        </div>
+
         {/* Bottom Copyright & GitHub Deployment Info */}
-        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-300">
+        <div className="mt-6 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-400">
           <p>
             &copy; {new Date().getFullYear()} Interseal Waterproofing Services. All Rights Reserved.
           </p>
 
           <div className="flex items-center gap-4">
-            <span className="text-slate-300">
+            <span className="text-slate-400">
               Live GitHub Pages:{' '}
               <a
                 href="https://obsidianstudiodesigns.github.io/Interseal-waterproofing-services"

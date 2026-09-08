@@ -10,10 +10,20 @@ import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { FloatingCTA } from './components/FloatingCTA';
 import { QuoteCalculatorModal } from './components/QuoteCalculatorModal';
+import { LegalModal } from './components/LegalModal';
+import { CookieBanner } from './components/CookieBanner';
+import { LegalTabKey } from './types';
 
 export default function App() {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [selectedService, setSelectedService] = useState<string | undefined>(undefined);
+
+  // Legal Policies Modal state
+  const [isLegalModalOpen, setIsLegalModalOpen] = useState(false);
+  const [legalModalTab, setLegalModalTab] = useState<LegalTabKey>('privacy');
+
+  // Cookie banner preference state
+  const [forceShowCookieBanner, setForceShowCookieBanner] = useState(false);
 
   const handleOpenQuote = (serviceName?: string) => {
     setSelectedService(serviceName);
@@ -23,6 +33,23 @@ export default function App() {
   const handleCloseQuote = () => {
     setIsQuoteModalOpen(false);
     setSelectedService(undefined);
+  };
+
+  const handleOpenLegal = (tab: LegalTabKey = 'privacy') => {
+    setLegalModalTab(tab);
+    setIsLegalModalOpen(true);
+  };
+
+  const handleCloseLegal = () => {
+    setIsLegalModalOpen(false);
+  };
+
+  const handleOpenCookiePreferences = () => {
+    setForceShowCookieBanner(true);
+  };
+
+  const handleCloseForceCookieBanner = () => {
+    setForceShowCookieBanner(false);
   };
 
   return (
@@ -54,8 +81,12 @@ export default function App() {
         <ContactSection />
       </main>
 
-      {/* Footer */}
-      <Footer onOpenQuote={handleOpenQuote} />
+      {/* Footer with Legal Links & POPIA Compliance */}
+      <Footer
+        onOpenQuote={handleOpenQuote}
+        onOpenLegal={handleOpenLegal}
+        onOpenCookiePreferences={handleOpenCookiePreferences}
+      />
 
       {/* Mobile Sticky Bar & Desktop WhatsApp Action */}
       <FloatingCTA onOpenQuote={() => handleOpenQuote()} />
@@ -65,6 +96,21 @@ export default function App() {
         isOpen={isQuoteModalOpen}
         onClose={handleCloseQuote}
         preSelectedService={selectedService}
+        onOpenLegal={handleOpenLegal}
+      />
+
+      {/* Comprehensive South Africa Legal & Compliance Modal (Privacy, POPIA, PAIA, Cookies) */}
+      <LegalModal
+        isOpen={isLegalModalOpen}
+        onClose={handleCloseLegal}
+        initialTab={legalModalTab}
+      />
+
+      {/* Cookie Consent Banner & Preference Manager */}
+      <CookieBanner
+        onOpenLegal={handleOpenLegal}
+        forceShow={forceShowCookieBanner}
+        onCloseForceShow={handleCloseForceCookieBanner}
       />
     </div>
   );

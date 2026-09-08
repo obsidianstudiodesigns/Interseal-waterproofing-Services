@@ -32,6 +32,11 @@ The site is configured to automatically build and deploy to GitHub Pages when pu
    - OpenGraph and Twitter Meta Tags
    - Custom SVG Brand Favicon
    - Rapid asset loading and clean zero-bloat Tailwind styling
+7. **South African Regulatory & Legal Compliance**:
+   - **Privacy Statement**: Clear disclosure of personal data handling, storage safeguards, and client rights.
+   - **POPI Act Policy (POPIA)**: Formulated in terms of the Protection of Personal Information Act (Act No. 4 of 2013), detailing the 8 statutory conditions for lawful processing, Information Officer contacts, and Information Regulator submission pathways.
+   - **PAIA Section 51 Manual**: Formulated in terms of the Promotion of Access to Information Act (Act No. 2 of 2000), outlining records held, request procedure (Form 2), statutory fees, and grounds for refusal.
+   - **Cookie Policy & Interactive Consent Banner**: Transparent explanation of essential, functional, and performance cookies with customizable preferences saved locally.
 
 ---
 

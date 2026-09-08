@@ -44,3 +44,5 @@ export interface BeforeAfterItem {
   beforeImg: string;
   afterImg: string;
 }
+
+export type LegalTabKey = 'privacy' | 'popi' | 'paia' | 'cookies';
