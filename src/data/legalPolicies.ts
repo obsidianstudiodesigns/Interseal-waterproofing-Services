@@ -19,7 +19,7 @@ export interface LegalDocument {
  * monitors. Do not reintroduce an email address here unless the client has
  * confirmed a real, monitored mailbox.
  */
-export const SITE_URL = 'https://obsidianstudiodesigns.github.io/Interseal-waterproofing-Services/';
+export const SITE_URL = 'https://intersealwaterproofing.co.za/';
 const CONTACT_LINE = 'telephone or WhatsApp on 064 038 9839';
 
 export const LEGAL_POLICIES: Record<'privacy' | 'popi' | 'paia' | 'cookies', LegalDocument> = {

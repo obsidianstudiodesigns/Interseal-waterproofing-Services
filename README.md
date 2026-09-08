@@ -6,7 +6,7 @@ Professional modern web application for **Interseal Waterproofing Services** –
 
 The site is configured to automatically build and deploy to GitHub Pages when pushed to the repository.
 
-- **GitHub Pages URL**: [https://obsidianstudiodesigns.github.io/Interseal-waterproofing-Services](https://obsidianstudiodesigns.github.io/Interseal-waterproofing-Services)
+- **GitHub Pages URL**: [https://intersealwaterproofing.co.za](https://intersealwaterproofing.co.za)
 - **Direct Phone / WhatsApp Contact**: 064 038 9839
 
 ---
@@ -61,7 +61,7 @@ To push this site to GitHub and activate the auto-build workflow:
 
 3. **Auto-Build**:
    - The included workflow file `.github/workflows/deploy.yml` will automatically trigger on every `git push` to `main`, run `npm run build`, and deploy the latest version directly to:
-   - `https://obsidianstudiodesigns.github.io/Interseal-waterproofing-Services`
+   - `https://intersealwaterproofing.co.za`
 
 ---
 
