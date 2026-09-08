@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { X, MessageCircle, Send, CheckCircle2, ShieldAlert, Sparkles, Phone, Calculator, ShieldCheck } from 'lucide-react';
-import { SERVICES_DATA, COMPANY_PHONE, WHATSAPP_INTL } from '../data/servicesData';
+import { X, MessageCircle, CheckCircle2, ShieldAlert, Sparkles, Phone, Calculator, ShieldCheck } from 'lucide-react';
+import { SERVICES_DATA, COMPANY_PHONE, COMPANY_PHONE_RAW, WHATSAPP_INTL } from '../data/servicesData';
 import { QuoteRequest, LegalTabKey } from '../types';
 
 interface QuoteCalculatorModalProps {
@@ -28,7 +28,6 @@ export const QuoteCalculatorModal: React.FC<QuoteCalculatorModalProps> = ({
   });
 
   const [submitted, setSubmitted] = useState(false);
-  const [referenceId, setReferenceId] = useState('');
 
   useEffect(() => {
     if (preSelectedService) {
@@ -71,19 +70,12 @@ export const QuoteCalculatorModal: React.FC<QuoteCalculatorModalProps> = ({
 
   const handleWhatsAppSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const url = `https://wa.me/${WHATSAPP_INTL}?text=${generateWhatsAppMessage()}`;
-    window.open(url, '_blank');
-    setReferenceId(`INT-${Math.floor(100000 + Math.random() * 900000)}`);
-    setSubmitted(true);
-  };
-
-  const handleDirectWebSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
     if (!formData.fullName || !formData.phone) {
       alert('Please enter your Name and Phone / WhatsApp number so we can reach you with your quote.');
       return;
     }
-    setReferenceId(`INT-${Math.floor(100000 + Math.random() * 900000)}`);
+    const url = `https://wa.me/${WHATSAPP_INTL}?text=${generateWhatsAppMessage()}`;
+    window.open(url, '_blank');
     setSubmitted(true);
   };
 
@@ -119,9 +111,18 @@ export const QuoteCalculatorModal: React.FC<QuoteCalculatorModalProps> = ({
               <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
                 <CheckCircle2 className="w-10 h-10" />
               </div>
-              <h4 className="text-2xl font-black text-[#0B2F64]">Quote Request Received!</h4>
+              <h4 className="text-2xl font-black text-[#0B2F64]">Your Quote Request Is Ready!</h4>
               <p className="text-sm text-slate-600 max-w-md mx-auto">
-                Thank you, <strong className="text-slate-900">{formData.fullName}</strong>. Your reference number is <strong className="text-[#0084D6]">{referenceId}</strong>. Our roofing specialist will contact you shortly at <strong className="text-slate-900">{formData.phone}</strong>.
+                Thank you, <strong className="text-slate-900">{formData.fullName}</strong>. We have opened
+                WhatsApp with your details filled in &ndash; simply press <strong>send</strong> and our roofing
+                specialist will reply to you on <strong className="text-slate-900">{formData.phone}</strong>.
+              </p>
+              <p className="text-xs text-slate-500 max-w-md mx-auto">
+                If WhatsApp did not open, use the button below or call us on{' '}
+                <a href={`tel:${COMPANY_PHONE_RAW}`} className="text-[#0084D6] font-bold hover:underline">
+                  {COMPANY_PHONE}
+                </a>
+                .
               </p>
               <div className="pt-4 flex flex-col sm:flex-row gap-3 justify-center">
                 <a
@@ -145,7 +146,7 @@ export const QuoteCalculatorModal: React.FC<QuoteCalculatorModalProps> = ({
               </div>
             </div>
           ) : (
-            <form onSubmit={handleDirectWebSubmit} className="space-y-6">
+            <form onSubmit={handleWhatsAppSubmit} className="space-y-6">
               {/* Service Selection */}
               <div>
                 <label className="block text-xs font-black uppercase tracking-wider text-slate-700 mb-2">
@@ -274,23 +275,22 @@ export const QuoteCalculatorModal: React.FC<QuoteCalculatorModalProps> = ({
               {/* Dual Action Buttons */}
               <div className="pt-2 flex flex-col sm:flex-row gap-3">
                 <button
-                  type="button"
+                  type="submit"
                   id="modal-whatsapp-send"
-                  onClick={handleWhatsAppSubmit}
                   className="flex-1 bg-[#25D366] hover:bg-[#20ba5a] text-white font-black py-3.5 px-4 rounded-xl text-sm shadow-md flex items-center justify-center gap-2 transition-all cursor-pointer"
                 >
                   <MessageCircle className="w-5 h-5 fill-white" />
                   <span>Send via WhatsApp Instant</span>
                 </button>
 
-                <button
-                  type="submit"
-                  id="modal-direct-send"
+                <a
+                  id="modal-direct-call"
+                  href={`tel:${COMPANY_PHONE_RAW}`}
                   className="flex-1 bg-[#0B2F64] hover:bg-[#08234D] text-white font-black py-3.5 px-4 rounded-xl text-sm shadow-md flex items-center justify-center gap-2 transition-all cursor-pointer"
                 >
-                  <Send className="w-4 h-4 text-amber-400" />
-                  <span>Submit Free Quote Request</span>
-                </button>
+                  <Phone className="w-4 h-4 text-amber-400" />
+                  <span>Call {COMPANY_PHONE} Now</span>
+                </a>
               </div>
 
               {/* POPIA & Privacy Consent Disclaimer */}

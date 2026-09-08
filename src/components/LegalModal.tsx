@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { X, ShieldCheck, FileText, Lock, Cookie, Scale, Search, Printer, ExternalLink, Phone, Mail, Building, CheckCircle2 } from 'lucide-react';
+import { X, ShieldCheck, FileText, Lock, Cookie, Scale, Search, Printer, ExternalLink, Phone, MessageCircle, Building, CheckCircle2 } from 'lucide-react';
 import { LEGAL_POLICIES, LegalDocument } from '../data/legalPolicies';
-import { COMPANY_PHONE, WHATSAPP_INTL } from '../data/servicesData';
+import { COMPANY_PHONE, COMPANY_PHONE_RAW, WHATSAPP_INTL } from '../data/servicesData';
 
 export type LegalTabKey = 'privacy' | 'popi' | 'paia' | 'cookies';
 
@@ -288,19 +288,26 @@ export const LegalModal: React.FC<LegalModalProps> = ({
               <div className="bg-white/10 p-3 rounded-xl space-y-1">
                 <span className="text-sky-300 block font-bold text-[11px]">Direct Channels:</span>
                 <a
-                  href={`tel:${COMPANY_PHONE}`}
+                  href={`tel:${COMPANY_PHONE_RAW}`}
                   className="flex items-center gap-1.5 text-white hover:text-amber-300 font-semibold"
                 >
                   <Phone className="w-3.5 h-3.5 text-amber-400" />
                   <span>{COMPANY_PHONE}</span>
                 </a>
                 <a
-                  href="mailto:obsidianstudiodesigns@gmail.com"
-                  className="flex items-center gap-1.5 text-sky-200 hover:text-white"
+                  href={`https://wa.me/${WHATSAPP_INTL}?text=${encodeURIComponent(
+                    'Hi Interseal, I would like to contact your Information Officer regarding a POPIA / PAIA request.'
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 text-emerald-300 hover:text-white font-semibold"
                 >
-                  <Mail className="w-3.5 h-3.5 text-sky-300" />
-                  <span>obsidianstudiodesigns@gmail.com</span>
+                  <MessageCircle className="w-3.5 h-3.5 fill-emerald-400 text-emerald-400" />
+                  <span>WhatsApp written requests</span>
                 </a>
+                <span className="block text-[10px] text-slate-400 pt-0.5 leading-snug">
+                  Interseal does not operate a business email account. Postal address available on request.
+                </span>
               </div>
             </div>
 

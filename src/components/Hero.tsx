@@ -24,6 +24,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuote }) => {
           alt="Interseal Professional Roofing and Waterproofing Membrane Application"
           className="w-full h-full object-cover object-center transform scale-105 transition-transform duration-1000"
           referrerPolicy="no-referrer"
+          width={1200}
+          height={670}
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
         {/* Multi-layer Gradient Overlays for High Contrast & Readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#071D3F]/95 via-[#0A2F68]/85 to-[#051C3B]/60" />

@@ -1,0 +1,14 @@
+{
+  "name": "Interseal Waterproofing Services",
+  "short_name": "Interseal",
+  "description": "Professional roofing and waterproofing experts in Gauteng, South Africa.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0B2F64",
+  "theme_color": "#0B2F64",
+  "icons": [
+    { "src": "web-app-manifest-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "web-app-manifest-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

@@ -80,6 +80,10 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenQuote })
                     alt={service.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     referrerPolicy="no-referrer"
+                    width={1200}
+                    height={670}
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
                   <span className="absolute top-3 right-3 bg-[#0B2F64]/90 backdrop-blur-xs text-amber-300 text-[11px] font-extrabold px-2.5 py-1 rounded-md shadow-xs">

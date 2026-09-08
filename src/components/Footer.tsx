@@ -1,6 +1,6 @@
 import React from 'react';
 import { Logo } from './Logo';
-import { Phone, MessageCircle, MapPin, ShieldCheck, ArrowUp, Lock, Scale, Cookie, FileText } from 'lucide-react';
+import { Phone, MessageCircle, MapPin, ShieldCheck, ArrowUp, Lock, Scale, Cookie } from 'lucide-react';
 import { COMPANY_PHONE, COMPANY_PHONE_RAW, WHATSAPP_INTL, COMPANY_AREAS, SERVICES_DATA } from '../data/servicesData';
 import { LegalTabKey } from '../types';
 
@@ -171,14 +171,15 @@ export const Footer: React.FC<FooterProps> = ({
 
           <div className="flex items-center gap-4">
             <span className="text-slate-400">
-              Live GitHub Pages:{' '}
+              Website Designed by{' '}
               <a
-                href="https://obsidianstudiodesigns.github.io/Interseal-waterproofing-services"
+                href="https://obsidianstudiodesigns.co.za/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sky-400 hover:underline"
+                title="Obsidian Studio Designs - Web Design &amp; Branding"
+                className="text-sky-400 font-bold hover:text-sky-300 hover:underline transition-colors"
               >
-                obsidianstudiodesigns.github.io/Interseal-waterproofing-services
+                Obsidian Studio Designs
               </a>
             </span>
 

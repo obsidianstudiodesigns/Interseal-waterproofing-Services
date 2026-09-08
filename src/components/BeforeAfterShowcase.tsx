@@ -86,6 +86,10 @@ export const BeforeAfterShowcase: React.FC<BeforeAfterShowcaseProps> = ({ onOpen
               alt={current.title}
               className="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition-transform duration-700"
               referrerPolicy="no-referrer"
+              width={1200}
+              height={670}
+              loading="lazy"
+              decoding="async"
             />
             <div className="absolute top-4 left-4 bg-[#0B2F64]/95 text-amber-400 text-xs font-extrabold px-3 py-1.5 rounded-lg shadow-md">
               {current.badge}

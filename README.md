@@ -6,7 +6,7 @@ Professional modern web application for **Interseal Waterproofing Services** –
 
 The site is configured to automatically build and deploy to GitHub Pages when pushed to the repository.
 
-- **GitHub Pages URL**: [https://obsidianstudiodesigns.github.io/Interseal-waterproofing-services](https://obsidianstudiodesigns.github.io/Interseal-waterproofing-services)
+- **GitHub Pages URL**: [https://obsidianstudiodesigns.github.io/Interseal-waterproofing-Services](https://obsidianstudiodesigns.github.io/Interseal-waterproofing-Services)
 - **Direct Phone / WhatsApp Contact**: 064 038 9839
 
 ---
@@ -47,7 +47,7 @@ To push this site to GitHub and activate the auto-build workflow:
 1. **Create/Link your GitHub Repository**:
    ```bash
    git init
-   git remote add origin https://github.com/obsidianstudiodesigns/Interseal-waterproofing-services.git
+   git remote add origin https://github.com/obsidianstudiodesigns/Interseal-waterproofing-Services.git
    git add .
    git commit -m "Initial commit for Interseal Waterproofing Services"
    git branch -M main
@@ -55,13 +55,13 @@ To push this site to GitHub and activate the auto-build workflow:
    ```
 
 2. **Enable GitHub Pages in your GitHub Repository Settings**:
-   - Go to your repository on GitHub: `https://github.com/obsidianstudiodesigns/Interseal-waterproofing-services`
+   - Go to your repository on GitHub: `https://github.com/obsidianstudiodesigns/Interseal-waterproofing-Services`
    - Navigate to **Settings** > **Pages** (in the left sidebar).
    - Under **Build and deployment** > **Source**, select **GitHub Actions**.
 
 3. **Auto-Build**:
    - The included workflow file `.github/workflows/deploy.yml` will automatically trigger on every `git push` to `main`, run `npm run build`, and deploy the latest version directly to:
-   - `https://obsidianstudiodesigns.github.io/Interseal-waterproofing-services`
+   - `https://obsidianstudiodesigns.github.io/Interseal-waterproofing-Services`
 
 ---
 

@@ -12,7 +12,6 @@ import saLiquidRubberImg from '../assets/images/sa_liquid_rubber_1788188372243.j
 export const COMPANY_PHONE = '064 038 9839';
 export const COMPANY_PHONE_RAW = '0640389839';
 export const WHATSAPP_INTL = '27640389839';
-export const COMPANY_EMAIL = 'info@intersealwaterproofing.co.za';
 export const COMPANY_AREAS = 'Gauteng, Pretoria, Centurion, Johannesburg, Midrand, Sandton & East Rand';
 
 export const SERVICES_DATA: ServiceItem[] = [
