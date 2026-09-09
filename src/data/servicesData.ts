@@ -22,7 +22,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     fullDesc: 'Expert waterproofing for flat concrete roofs, balconies, and deck slabs using premium high-tensile 4mm torch-on polyester-reinforced bitumen membranes. We treat concrete cracks, apply deep-penetrating primers, and ensure optimal drainage slopes.',
     category: 'waterproofing',
     popular: true,
-    image: saTorchonImg,
+    image: '/brand/concrete-roof.jpg',
     features: [
       'Heavy-duty 4mm SABS torch-on membrane',
       'Bitumen primer & expansion joint sealing',
@@ -38,7 +38,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     fullDesc: 'Specialized sealing for residential and industrial metal roofs. We seal overlapping sheet joints with reinforced membrane systems, replace rusted roofing screws with bonded EPDM washers, and apply rust converter and anti-corrosion barrier coatings.',
     category: 'roofing',
     popular: true,
-    image: saRoofSheetsImg,
+    image: '/brand/roof-sheets.jpg',
     features: [
       'Lap joint & ridge cap membrane sealing',
       'Roof screw replacement with sealed washers',
@@ -70,7 +70,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     fullDesc: 'Comprehensive residential and commercial roofing solutions. From fixing persistent roof leaks, replacing cracked roof tiles, re-bedding ridge caps with bonding mortar, to installing complete new timber or steel roof structures.',
     category: 'roofing',
     popular: true,
-    image: saRoofRepairsImg,
+    image: '/brand/roof-repairs.jpg',
     features: [
       'Emergency roof leak diagnostics & repairs',
       'Broken & shifted tile replacement',
@@ -145,7 +145,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     shortDesc: 'Specialized 4mm thermofused bitumen membrane for flat roofs, parapets & balconies.',
     fullDesc: 'The gold standard for concrete roofs and commercial buildings. Applied by certified flame-torch operators for a seamless, 100% impenetrable seal.',
     category: 'waterproofing',
-    image: saTorchonImg,
+    image: '/brand/torch-on.jpg',
     features: [
       'Thermofused modified bitumen membrane',
       'Full surface adhesion with no air pockets',
@@ -159,7 +159,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     shortDesc: 'Seamless, highly flexible elastomeric membrane for complex roof contours.',
     fullDesc: 'Advanced cold-applied liquid rubber coating that cures into a continuous rubberized membrane with up to 900% elongation, resisting UV degradation, acid rain, and substrate shifts.',
     category: 'waterproofing',
-    image: saLiquidRubberImg,
+    image: '/brand/roof-application.jpg',
     features: [
       'Continuous joint-free elastomeric skin',
       'Exceptional UV resistance & thermal flexibility',

@@ -1,7 +1,6 @@
 import React from 'react';
 import { ShieldCheck, Phone, MessageCircle, ArrowRight, CheckCircle2, Award, Clock, Sparkles } from 'lucide-react';
 import { COMPANY_PHONE, COMPANY_PHONE_RAW, WHATSAPP_INTL } from '../data/servicesData';
-import heroBackground from '../assets/images/roof_waterproofing_hero_1788168654335.jpg';
 
 interface HeroProps {
   onOpenQuote: (serviceName?: string) => void;
@@ -20,12 +19,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuote }) => {
       {/* Photorealistic Background with Optimized Gradient Overlay matching Flyer Palette */}
       <div className="absolute inset-0 z-0">
         <img
-          src={heroBackground}
-          alt="Interseal Professional Roofing and Waterproofing Membrane Application"
+          src="/brand/hero-roof-team.jpg"
+          alt="Interseal roofing team applying torch-on waterproofing membrane to a flat concrete roof in Gauteng"
           className="w-full h-full object-cover object-center transform scale-105 transition-transform duration-1000"
           referrerPolicy="no-referrer"
-          width={1200}
-          height={670}
+          width={1040}
+          height={780}
           loading="eager"
           fetchPriority="high"
           decoding="async"
