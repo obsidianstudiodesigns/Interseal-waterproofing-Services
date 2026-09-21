@@ -31,7 +31,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuote }) => {
           <img
             src="/brand/hero-mobile.jpg"
             alt="Interseal roofing team applying torch-on waterproofing membrane to a flat concrete roof"
-            className="w-full h-full object-cover object-center transform scale-105 transition-transform duration-1000"
+            /* On phones the tall hero crops ~50% of the image width. Centring
+               cut the torch and flame (they sit at 75-93% across) clean off the
+               right edge, leaving only the worker's face and torso. Biasing the
+               crop right keeps both him and the work he is doing in frame. */
+            className="w-full h-full object-cover object-[82%_center] md:object-center transform scale-105 transition-transform duration-1000"
             referrerPolicy="no-referrer"
             width={768}
             height={1376}
@@ -41,8 +45,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuote }) => {
           />
         </picture>
         {/* Multi-layer Gradient Overlays for High Contrast & Readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#071D3F]/95 via-[#0A2F68]/85 to-[#051C3B]/60" />
-        <div className="absolute inset-0 bg-radial-at-t from-sky-500/15 via-transparent to-[#04132B]/80" />
+        {/* Desktop: darken left-to-right so the copy column stays legible and
+            the photo breathes on the right.
+            Mobile: the copy runs full width, so a sideways wash just greyed the
+            whole picture out. Darken top-to-bottom instead - heavy behind the
+            headline, clearing lower down where the torch work is. */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#071D3F]/92 via-[#0A2F68]/70 to-[#051C3B]/35 md:bg-gradient-to-r md:from-[#071D3F]/95 md:via-[#0A2F68]/85 md:to-[#051C3B]/60" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -142,7 +150,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuote }) => {
 
           {/* Right Hero Callout Card (Floating Quick Inquiry & Direct Number) */}
           <div className="lg:col-span-4">
-            <div className="bg-white/95 backdrop-blur-md rounded-2xl p-6 sm:p-7 shadow-2xl border-2 border-sky-200/50 text-slate-900 space-y-5">
+            {/* Lighter and more translucent on phones so the photo reads
+                through it; stays near-solid on desktop where it sits over the
+                darker side of the gradient. */}
+            <div className="bg-white/80 md:bg-white/95 backdrop-blur-lg md:backdrop-blur-md rounded-2xl p-6 sm:p-7 shadow-2xl border-2 border-white/60 md:border-sky-200/50 text-slate-900 space-y-5">
               <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                 <div>
                   <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#0084D6]">
