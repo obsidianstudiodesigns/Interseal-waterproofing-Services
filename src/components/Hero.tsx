@@ -35,10 +35,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuote }) => {
                cut the torch and flame (they sit at 75-93% across) clean off the
                right edge, leaving only the worker's face and torso. Biasing the
                crop right keeps both him and the work he is doing in frame. */
-            className="w-full h-full object-cover object-[82%_center] md:object-center transform scale-105 transition-transform duration-1000"
+            className="w-full h-full object-cover object-[89%_center] md:object-center transform scale-105 transition-transform duration-1000"
             referrerPolicy="no-referrer"
             width={768}
-            height={1376}
+            height={1266}
             loading="eager"
             fetchPriority="high"
             decoding="async"
@@ -148,8 +148,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuote }) => {
             </div>
           </div>
 
-          {/* Right Hero Callout Card (Floating Quick Inquiry & Direct Number) */}
-          <div className="lg:col-span-4">
+          {/* Right Hero Callout Card (Floating Quick Inquiry & Direct Number).
+              Hidden below lg: on phones it repeated CTAs already present in the
+              WhatsApp button, the quote button and the sticky bottom bar, while
+              covering the lower 40% of the hero photo. */}
+          <div className="hidden lg:block lg:col-span-4">
             {/* Lighter and more translucent on phones so the photo reads
                 through it; stays near-solid on desktop where it sits over the
                 darker side of the gradient. */}
