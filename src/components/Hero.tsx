@@ -18,17 +18,28 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuote }) => {
     <section className="relative min-h-[90vh] lg:min-h-[92vh] flex items-center pt-24 sm:pt-28 pb-16 overflow-hidden">
       {/* Photorealistic Background with Optimized Gradient Overlay matching Flyer Palette */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="/brand/hero-roof-team.jpg"
-          alt="Interseal roofing team applying torch-on waterproofing membrane to a flat concrete roof in Gauteng"
-          className="w-full h-full object-cover object-center transform scale-105 transition-transform duration-1000"
-          referrerPolicy="no-referrer"
-          width={1040}
-          height={780}
-          loading="eager"
-          fetchPriority="high"
-          decoding="async"
-        />
+        {/* Landscape crop on desktop, portrait crop on phones. The browser
+            downloads only the source that matches, so mobile never pulls the
+            wide file. Breakpoint matches Tailwind's md. */}
+        <picture>
+          <source
+            media="(min-width: 768px)"
+            srcSet="/brand/hero-desktop.jpg"
+            width={1376}
+            height={768}
+          />
+          <img
+            src="/brand/hero-mobile.jpg"
+            alt="Interseal roofing team applying torch-on waterproofing membrane to a flat concrete roof"
+            className="w-full h-full object-cover object-center transform scale-105 transition-transform duration-1000"
+            referrerPolicy="no-referrer"
+            width={768}
+            height={1376}
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+          />
+        </picture>
         {/* Multi-layer Gradient Overlays for High Contrast & Readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#071D3F]/95 via-[#0A2F68]/85 to-[#051C3B]/60" />
         <div className="absolute inset-0 bg-radial-at-t from-sky-500/15 via-transparent to-[#04132B]/80" />

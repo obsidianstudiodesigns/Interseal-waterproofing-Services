@@ -38,7 +38,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     fullDesc: 'Specialized sealing for residential and industrial metal roofs. We seal overlapping sheet joints with reinforced membrane systems, replace rusted roofing screws with bonded EPDM washers, and apply rust converter and anti-corrosion barrier coatings.',
     category: 'roofing',
     popular: true,
-    image: '/brand/roof-sheets.jpg',
+    image: '/brand/roof-sheets-red-painted.jpg',
     features: [
       'Lap joint & ridge cap membrane sealing',
       'Roof screw replacement with sealed washers',
